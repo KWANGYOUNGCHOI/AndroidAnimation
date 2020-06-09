@@ -1,17 +1,20 @@
 package com.kwang0.androidpretty.presentation.ui.adapters
 
+import android.app.Activity
 import android.content.Context
+import android.graphics.drawable.AnimationDrawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.kwang0.androidpretty.R
 import com.kwang0.androidpretty.data.models.Content
-import com.kwang0.androidpretty.helper.GlideHelper
 import com.kwang0.androidpretty.helper.IntentHelper
 import com.kwang0.androidpretty.presentation.ui.activities.NeonButtonActivity
 
@@ -30,7 +33,7 @@ class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerV
         try {
             val item: Content = mData.get(position)
 
-            setContentImage(holder, item.image)
+            setContentFrame(holder, item.id)
             setContentText(holder, item.text)
             setClickListener(holder, item.id)
         } catch (e: IndexOutOfBoundsException) {
@@ -38,8 +41,19 @@ class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerV
         }
     }
 
-    private fun setContentImage(holder: ViewHolder, image: String) {
-        GlideHelper.loadImg(mContext, image, holder.iv)
+    private fun setContentFrame(holder: ViewHolder, id: String) {
+        when(id) {
+            "anim-01" -> {
+                val view = LayoutInflater.from(mContext)
+                    .inflate(R.layout.view_neon_btn, holder.fl, false)
+                val button = view.findViewById<Button>(R.id.view_neon_btn)
+                val frameAnimation = button.getBackground() as AnimationDrawable
+                frameAnimation.setCallback(button)
+                frameAnimation.setVisible(true, true)
+                frameAnimation.start()
+                holder.fl.addView(view)
+            }
+        }
     }
 
     private fun setContentText(holder: ViewHolder, text: String) {
@@ -47,18 +61,21 @@ class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerV
     }
     private fun setClickListener(holder: ViewHolder, id: String) {
         when(id) {
-            "anim-01" -> holder.layout.setOnClickListener{ IntentHelper.activityIntent(mContext, NeonButtonActivity::class.java) }
+            "anim-01" -> holder.layout.setOnClickListener{
+                holder.fl.transitionName = "frameTransition"
+                IntentHelper.activityTransitionIntent(mContext as Activity, NeonButtonActivity::class.java, holder.fl, "frameTransition")
+            }
         }
     }
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var layout: ConstraintLayout
-        var iv: ImageView
+        var fl: FrameLayout
         var tv: TextView
         init {
             layout = itemView.findViewById<ConstraintLayout>(R.id.main_rv_layout)
-            iv = itemView.findViewById<ImageView>(R.id.main_rv_iv)
+            fl = itemView.findViewById<FrameLayout>(R.id.main_rv_fl)
             tv = itemView.findViewById<TextView>(R.id.main_rv_tv)
         }
     }

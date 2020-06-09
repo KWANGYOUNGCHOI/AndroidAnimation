@@ -3,5 +3,7 @@
 
     <string name="main_animation_txt">ANIMATION</string>
 
+    <string name="button">BUTTON</string>
+
     <string name="exception_out_of_bounds">Error occur when loading list</string>
 </resources>

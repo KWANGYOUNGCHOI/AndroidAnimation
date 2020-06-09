@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/main_animation_txt"
-        android:textSize="@dimen/textSmall"
+        android:textSize="@dimen/textBig"
         android:textColor="@color/colorBlack"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="@dimen/bigMargin"/>
