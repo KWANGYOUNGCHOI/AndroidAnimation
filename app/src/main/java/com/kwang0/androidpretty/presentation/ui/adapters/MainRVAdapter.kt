@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kwang0.androidpretty.R
 import com.kwang0.androidpretty.data.models.Content
 import com.kwang0.androidpretty.helper.GlideHelper
+import com.kwang0.androidpretty.helper.IntentHelper
+import com.kwang0.androidpretty.presentation.ui.activities.NeonButtonActivity
 
 class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerView.Adapter<MainRVAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainRVAdapter.ViewHolder {
@@ -30,6 +32,7 @@ class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerV
 
             setContentImage(holder, item.image)
             setContentText(holder, item.text)
+            setClickListener(holder, item.id)
         } catch (e: IndexOutOfBoundsException) {
             Toast.makeText(mContext, mContext.getString(R.string.exception_out_of_bounds), Toast.LENGTH_LONG).show()
         }
@@ -41,6 +44,11 @@ class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerV
 
     private fun setContentText(holder: ViewHolder, text: String) {
         holder.tv.text = text
+    }
+    private fun setClickListener(holder: ViewHolder, id: String) {
+        when(id) {
+            "anim-01" -> holder.layout.setOnClickListener{ IntentHelper.activityIntent(mContext, NeonButtonActivity::class.java) }
+        }
     }
 
 

@@ -10,6 +10,8 @@
     <dimen name="textMaxSmall">12sp</dimen>
     <dimen name="textSuperMaxSmall">10sp</dimen>
 
+    <dimen name="mainCorner">16dp</dimen>
+
     <dimen name="maxBigPadding">24dp</dimen>
     <dimen name="bigPadding">16dp</dimen>
     <dimen name="padding">8dp</dimen>

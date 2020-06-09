@@ -50,9 +50,7 @@ class MainRVView(private var mContext: Context): MainPresenterView {
     }
 
     fun addAnimationContent() {
-        animationList.add(Content("1", "1"))
-        animationList.add(Content("1", "1"))
-        animationList.add(Content("1", "1"))
+        animationList.add(Content("anim-01","1", "NEON BUTTON"))
 
         animationAdapter.notifyDataSetChanged()
     }
