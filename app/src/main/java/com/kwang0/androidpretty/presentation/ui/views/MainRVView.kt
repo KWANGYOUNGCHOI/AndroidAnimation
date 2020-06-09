@@ -25,7 +25,7 @@ class MainRVView(private var mContext: Context): MainPresenterView {
     var animationAdapter: MainRVAdapter
 
     init {
-        mainPresenter = MainPresenterImpl()
+        mainPresenter = MainPresenterImpl(this)
 
         animationAdapter = MainRVAdapter(mContext, animationList)
     }
@@ -52,6 +52,10 @@ class MainRVView(private var mContext: Context): MainPresenterView {
     fun addAnimationContent() {
         animationList.add(Content("anim-01", "NEON BUTTON"))
 
+        animationAdapter.notifyDataSetChanged()
+    }
+
+    override fun refresh() {
         animationAdapter.notifyDataSetChanged()
     }
 }

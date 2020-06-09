@@ -4,24 +4,14 @@
     android:oneshot="false">
     <item
         android:duration="1000">
-        <shape android:shape="rectangle">
-            <corners
-                android:bottomLeftRadius="@dimen/mainCorner"
-                android:bottomRightRadius="@dimen/mainCorner"
-                android:topLeftRadius="@dimen/mainCorner"
-                android:topRightRadius="@dimen/mainCorner"/>
-            <solid android:color="@color/colorWhite" />
-        </shape>
+        <layer-list>
+            <item android:drawable="@drawable/blurred_9_path_white" />
+        </layer-list>
     </item>
     <item
         android:duration="1000">
-        <shape android:shape="rectangle">
-            <corners
-                android:bottomLeftRadius="@dimen/mainCorner"
-                android:bottomRightRadius="@dimen/mainCorner"
-                android:topLeftRadius="@dimen/mainCorner"
-                android:topRightRadius="@dimen/mainCorner"/>
-            <solid android:color="@color/colorPrimary" />
-        </shape>
+        <layer-list>
+            <item android:drawable="@drawable/blurred_9_path_neon" />
+        </layer-list>
     </item>
 </animation-list>

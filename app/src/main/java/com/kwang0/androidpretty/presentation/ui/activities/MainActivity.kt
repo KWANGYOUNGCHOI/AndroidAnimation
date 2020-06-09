@@ -18,7 +18,10 @@ class MainActivity : AppCompatActivity() {
         mainViewSetUp()
     }
 
-
+    override fun onResume() {
+        super.onResume()
+        animationView?.mainPresenter?.resume()
+    }
 
     private fun mainViewSetUp() {
         animationView = MainRVView(this)
