@@ -3,7 +3,6 @@ package com.kwang0.androidpretty.presentation.ui.adapters
 import android.app.Activity
 import android.content.Context
 import android.graphics.drawable.AnimationDrawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kwang0.androidpretty.R
 import com.kwang0.androidpretty.data.models.Content
 import com.kwang0.androidpretty.helper.IntentHelper
-import com.kwang0.androidpretty.presentation.ui.activities.NeonButtonActivity
+import com.kwang0.androidpretty.presentation.ui.activities.NeonButtonSwitchActivity
 
 class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerView.Adapter<MainRVAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainRVAdapter.ViewHolder {
@@ -48,8 +47,6 @@ class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerV
                     .inflate(R.layout.view_neon_btn, holder.fl, false)
                 val button = view.findViewById<Button>(R.id.view_neon_btn)
                 val frameAnimation = button.getBackground() as AnimationDrawable
-                frameAnimation.setCallback(button)
-                frameAnimation.setVisible(true, true)
                 frameAnimation.start()
                 holder.fl.addView(view)
             }
@@ -63,7 +60,7 @@ class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerV
         when(id) {
             "anim-01" -> holder.layout.setOnClickListener{
                 holder.fl.transitionName = "frameTransition"
-                IntentHelper.activityTransitionIntent(mContext as Activity, NeonButtonActivity::class.java, holder.fl, "frameTransition")
+                IntentHelper.activityTransitionIntent(mContext as Activity, NeonButtonSwitchActivity::class.java, holder.fl, "frameTransition")
             }
         }
     }
