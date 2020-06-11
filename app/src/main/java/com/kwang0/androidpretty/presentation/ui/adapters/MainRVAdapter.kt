@@ -12,9 +12,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieCompositionFactory
 import com.kwang0.androidpretty.R
 import com.kwang0.androidpretty.data.models.Content
 import com.kwang0.androidpretty.helper.IntentHelper
+import com.kwang0.androidpretty.presentation.ui.activities.HostsAnimActivity
 import com.kwang0.androidpretty.presentation.ui.activities.NeonButtonSwitchActivity
 
 class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerView.Adapter<MainRVAdapter.ViewHolder>() {
@@ -50,6 +52,11 @@ class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerV
                 frameAnimation.start()
                 holder.fl.addView(view)
             }
+            "anim-02" -> {
+                val view = LayoutInflater.from(mContext)
+                    .inflate(R.layout.view_hosts_anim, holder.fl, false)
+                holder.fl.addView(view)
+            }
         }
     }
 
@@ -61,6 +68,10 @@ class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerV
             "anim-01" -> holder.layout.setOnClickListener{
                 holder.fl.transitionName = "frameTransition"
                 IntentHelper.activityTransitionIntent(mContext as Activity, NeonButtonSwitchActivity::class.java, holder.fl, "frameTransition")
+            }
+            "anim-02" -> holder.layout.setOnClickListener{
+                holder.fl.transitionName = "frameTransition"
+                IntentHelper.activityTransitionIntent(mContext as Activity, HostsAnimActivity::class.java, holder.fl, "frameTransition")
             }
         }
     }

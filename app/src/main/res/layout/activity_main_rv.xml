@@ -24,6 +24,8 @@
         android:textSize="@dimen/textSmall"
         android:gravity="center_horizontal"
         android:layout_margin="@dimen/bigMargin"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:layout_constraintTop_toBottomOf="@+id/main_rv_fl"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
