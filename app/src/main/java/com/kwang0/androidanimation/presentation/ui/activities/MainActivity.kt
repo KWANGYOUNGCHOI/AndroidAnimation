@@ -1,10 +1,9 @@
-package com.kwang0.androidpretty.presentation.ui.activities
+package com.kwang0.androidanimation.presentation.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import com.kwang0.androidpretty.R
-import com.kwang0.androidpretty.presentation.ui.views.MainRVView
+import com.kwang0.androidanimation.R
+import com.kwang0.androidanimation.presentation.ui.views.MainRVView
 
 class MainActivity : AppCompatActivity() {
     val TAG = MainActivity::class.simpleName

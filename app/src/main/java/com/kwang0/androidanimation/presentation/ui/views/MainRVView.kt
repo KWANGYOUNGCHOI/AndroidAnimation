@@ -1,18 +1,16 @@
-package com.kwang0.androidpretty.presentation.ui.views
+package com.kwang0.androidanimation.presentation.ui.views
 
 import android.app.Activity
 import android.content.Context
-import android.util.Log
 import android.view.View
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.kwang0.androidpretty.R
-import com.kwang0.androidpretty.data.models.Content
-import com.kwang0.androidpretty.presentation.presenters.MainPresenter
-import com.kwang0.androidpretty.presentation.presenters.MainPresenterView
-import com.kwang0.androidpretty.presentation.presenters.impl.MainPresenterImpl
-import com.kwang0.androidpretty.presentation.ui.adapters.MainRVAdapter
+import com.kwang0.androidanimation.R
+import com.kwang0.androidanimation.data.models.Content
+import com.kwang0.androidanimation.presentation.presenters.MainPresenter
+import com.kwang0.androidanimation.presentation.presenters.MainPresenterView
+import com.kwang0.androidanimation.presentation.presenters.impl.MainPresenterImpl
+import com.kwang0.androidanimation.presentation.ui.adapters.MainRVAdapter
 import java.util.ArrayList
 
 class MainRVView(private var mContext: Context): MainPresenterView {

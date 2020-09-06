@@ -1,4 +1,4 @@
-package com.kwang0.androidpretty
+package com.kwang0.androidanimation
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.kwang0.androidpretty", appContext.packageName)
+        assertEquals("com.kwang0.androidanimation", appContext.packageName)
     }
 }

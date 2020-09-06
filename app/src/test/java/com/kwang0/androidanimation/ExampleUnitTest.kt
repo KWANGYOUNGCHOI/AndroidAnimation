@@ -1,4 +1,4 @@
-package com.kwang0.androidpretty
+package com.kwang0.androidanimation
 
 import org.junit.Test
 

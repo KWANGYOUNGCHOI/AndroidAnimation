@@ -1,11 +1,10 @@
-package com.kwang0.androidpretty.presentation.ui.activities
+package com.kwang0.androidanimation.presentation.ui.activities
 
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.widget.Button
-import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.kwang0.androidpretty.R
+import com.kwang0.androidanimation.R
 import kotlinx.android.synthetic.main.activity_neon_button_switch.*
 
 

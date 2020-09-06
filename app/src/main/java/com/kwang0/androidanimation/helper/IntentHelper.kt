@@ -1,10 +1,9 @@
-package com.kwang0.androidpretty.helper
+package com.kwang0.androidanimation.helper
 
 import android.app.Activity
 import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
-import android.text.Layout
 import android.util.Pair
 import android.view.View
 

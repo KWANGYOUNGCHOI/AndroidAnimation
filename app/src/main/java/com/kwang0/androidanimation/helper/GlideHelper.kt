@@ -1,10 +1,10 @@
-package com.kwang0.androidpretty.helper
+package com.kwang0.androidanimation.helper
 
 import android.content.Context
 import android.net.Uri
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.kwang0.androidpretty.R
+import com.kwang0.androidanimation.R
 import java.io.File
 
 object GlideHelper {

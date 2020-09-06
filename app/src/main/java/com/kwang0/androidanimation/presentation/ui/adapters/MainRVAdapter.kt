@@ -1,4 +1,4 @@
-package com.kwang0.androidpretty.presentation.ui.adapters
+package com.kwang0.androidanimation.presentation.ui.adapters
 
 import android.app.Activity
 import android.content.Context
@@ -12,12 +12,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.LottieCompositionFactory
-import com.kwang0.androidpretty.R
-import com.kwang0.androidpretty.data.models.Content
-import com.kwang0.androidpretty.helper.IntentHelper
-import com.kwang0.androidpretty.presentation.ui.activities.HostsAnimActivity
-import com.kwang0.androidpretty.presentation.ui.activities.NeonButtonSwitchActivity
+import com.kwang0.androidanimation.R
+import com.kwang0.androidanimation.data.models.Content
+import com.kwang0.androidanimation.helper.IntentHelper
+import com.kwang0.androidanimation.presentation.ui.activities.HostsAnimActivity
+import com.kwang0.androidanimation.presentation.ui.activities.NeonButtonSwitchActivity
 
 class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerView.Adapter<MainRVAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainRVAdapter.ViewHolder {

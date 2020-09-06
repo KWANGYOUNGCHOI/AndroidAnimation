@@ -1,11 +1,8 @@
-package com.kwang0.androidpretty.presentation.ui.activities
+package com.kwang0.androidanimation.presentation.ui.activities
 
-import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.FrameLayout
-import com.kwang0.androidpretty.R
+import com.kwang0.androidanimation.R
 import kotlinx.android.synthetic.main.activity_hosts_anim.*
 
 class HostsAnimActivity : AppCompatActivity() {
