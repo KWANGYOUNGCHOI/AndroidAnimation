@@ -10,7 +10,7 @@ import com.kwang0.androidanimation.data.models.Content
 import com.kwang0.androidanimation.presentation.presenters.MainContract
 import com.kwang0.androidanimation.presentation.presenters.impl.MainPresenterImpl
 import com.kwang0.androidanimation.presentation.ui.adapters.MainAdapter
-import java.util.ArrayList
+import java.util.*
 
 class MainRecycler(private var mContext: Context): MainContract.View {
     var TAG = MainRecycler::class.simpleName
