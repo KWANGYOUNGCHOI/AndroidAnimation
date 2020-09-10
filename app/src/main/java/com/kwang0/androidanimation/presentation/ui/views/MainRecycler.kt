@@ -9,39 +9,39 @@ import com.kwang0.androidanimation.R
 import com.kwang0.androidanimation.data.models.Content
 import com.kwang0.androidanimation.presentation.presenters.MainContract
 import com.kwang0.androidanimation.presentation.presenters.impl.MainPresenterImpl
-import com.kwang0.androidanimation.presentation.ui.adapters.MainRVAdapter
-import java.util.ArrayList
+import com.kwang0.androidanimation.presentation.ui.adapters.MainAdapter
+import java.util.*
 
-class MainRVView(private var mContext: Context): MainContract.View {
-    var TAG = MainRVView::class.simpleName
+class MainRecycler(private var mContext: Context): MainContract.View {
+    var TAG = MainRecycler::class.simpleName
 
-    private lateinit var animation_rv: RecyclerView
+    private lateinit var animation_recycler: RecyclerView
 
     var mainPresenter: MainContract.Presenter
     private var animationList: MutableList<Content> = ArrayList<Content>()
-    var animationAdapter: MainRVAdapter
+    var animationAdapter: MainAdapter
 
     init {
         mainPresenter = MainPresenterImpl(this)
 
-        animationAdapter = MainRVAdapter(mContext, animationList)
+        animationAdapter = MainAdapter(mContext, animationList)
     }
 
     fun bindView(a: Activity) {
-        animation_rv = a.findViewById<RecyclerView>(R.id.main_animation_rv)
+        animation_recycler = a.findViewById<RecyclerView>(R.id.main_animation_rv)
         recyclerInit()
     }
 
     fun bindView(v: View) {
-        animation_rv = v.findViewById<RecyclerView>(R.id.main_animation_rv)
+        animation_recycler = v.findViewById<RecyclerView>(R.id.main_animation_rv)
         recyclerInit()
     }
 
     fun recyclerInit() {
-        animation_rv.setHasFixedSize(true)
-        animation_rv.isNestedScrollingEnabled = false
-        animation_rv.layoutManager = LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false)
-        animation_rv.adapter = animationAdapter
+        animation_recycler.setHasFixedSize(true)
+        animation_recycler.isNestedScrollingEnabled = false
+        animation_recycler.layoutManager = LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false)
+        animation_recycler.adapter = animationAdapter
 
         addAnimationContent()
     }

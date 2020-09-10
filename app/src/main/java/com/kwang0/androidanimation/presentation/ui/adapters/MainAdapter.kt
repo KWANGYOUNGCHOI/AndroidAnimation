@@ -18,8 +18,8 @@ import com.kwang0.androidanimation.helper.IntentHelper
 import com.kwang0.androidanimation.presentation.ui.activities.HostsAnimActivity
 import com.kwang0.androidanimation.presentation.ui.activities.NeonButtonSwitchActivity
 
-class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerView.Adapter<MainRVAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainRVAdapter.ViewHolder {
+class MainAdapter(val mContext: Context, var mData: List<Content>) : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapter.ViewHolder {
         val rootView: View
         rootView = LayoutInflater.from(mContext).inflate(R.layout.activity_main_rv, parent, false)
         return ViewHolder(rootView)
@@ -29,7 +29,7 @@ class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerV
         return mData.size
     }
 
-    override fun onBindViewHolder(holder: MainRVAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MainAdapter.ViewHolder, position: Int) {
         try {
             val item: Content = mData.get(position)
 
