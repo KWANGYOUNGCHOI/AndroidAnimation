@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kwang0.androidanimation.R
 import com.kwang0.androidanimation.data.models.Content
 import com.kwang0.androidanimation.presentation.presenters.MainContract
-import com.kwang0.androidanimation.presentation.presenters.MainPresenter
-import com.kwang0.androidanimation.presentation.presenters.MainPresenterView
 import com.kwang0.androidanimation.presentation.presenters.impl.MainPresenterImpl
 import com.kwang0.androidanimation.presentation.ui.adapters.MainRVAdapter
 import java.util.ArrayList
