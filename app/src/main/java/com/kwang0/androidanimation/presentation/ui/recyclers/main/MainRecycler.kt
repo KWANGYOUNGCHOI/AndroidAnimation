@@ -1,4 +1,4 @@
-package com.kwang0.androidanimation.presentation.ui.views
+package com.kwang0.androidanimation.presentation.ui.recyclers.main
 
 import android.app.Activity
 import android.content.Context
@@ -9,8 +9,7 @@ import com.kwang0.androidanimation.R
 import com.kwang0.androidanimation.data.models.Content
 import com.kwang0.androidanimation.presentation.presenters.MainContract
 import com.kwang0.androidanimation.presentation.presenters.impl.MainPresenterImpl
-import com.kwang0.androidanimation.presentation.ui.adapters.MainAdapter
-import java.util.*
+import java.util.ArrayList
 
 class MainRecycler(private var mContext: Context): MainContract.View {
     var TAG = MainRecycler::class.simpleName
@@ -19,12 +18,16 @@ class MainRecycler(private var mContext: Context): MainContract.View {
 
     var mainPresenter: MainContract.Presenter
     private var animationList: MutableList<Content> = ArrayList<Content>()
-    var animationAdapter: MainAdapter
+    var animationAdapter: MainRecyclerAdapter
 
     init {
         mainPresenter = MainPresenterImpl(this)
 
-        animationAdapter = MainAdapter(mContext, animationList)
+        animationAdapter =
+            MainRecyclerAdapter(
+                mContext,
+                animationList
+            )
     }
 
     fun bindView(a: Activity) {

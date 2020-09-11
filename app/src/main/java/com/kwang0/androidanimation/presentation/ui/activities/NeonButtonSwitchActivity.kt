@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.kwang0.androidanimation.R
 import kotlinx.android.synthetic.main.activity_neon_button_switch.*
+import kotlinx.android.synthetic.main.view_neon_btn.view.*
 
 
 class NeonButtonSwitchActivity : AppCompatActivity() {
@@ -15,9 +16,9 @@ class NeonButtonSwitchActivity : AppCompatActivity() {
         setContentView(R.layout.activity_neon_button_switch)
 
         val view = layoutInflater.inflate(R.layout.view_neon_btn, neon_btn_fl, false)
-        val button = view.findViewById<Button>(R.id.view_neon_btn)
-        val frameAnimation = button.getBackground() as AnimationDrawable
-        frameAnimation.start()
+        view.view_neon_btn.background.also {
+            (it as AnimationDrawable).start()
+        }
         neon_btn_fl?.addView(view)
     }
 }

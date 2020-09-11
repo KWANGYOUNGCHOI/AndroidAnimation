@@ -3,7 +3,7 @@ package com.kwang0.androidanimation.presentation.ui.activities
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.kwang0.androidanimation.R
-import com.kwang0.androidanimation.presentation.ui.views.MainRecycler
+import com.kwang0.androidanimation.presentation.ui.recyclers.main.MainRecycler
 
 class MainActivity : AppCompatActivity() {
     val TAG = MainActivity::class.simpleName
