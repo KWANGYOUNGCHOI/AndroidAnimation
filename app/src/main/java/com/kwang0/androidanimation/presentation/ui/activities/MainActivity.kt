@@ -3,7 +3,7 @@ package com.kwang0.androidanimation.presentation.ui.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.kwang0.androidanimation.R
-import com.kwang0.androidanimation.presentation.ui.views.MainRVView
+import com.kwang0.androidanimation.presentation.ui.recyclers.MainRVView
 
 class MainActivity : AppCompatActivity() {
     val TAG = MainActivity::class.simpleName
@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mainViewSetUp() {
-        animationView = MainRVView(this)
+        animationView =
+            MainRVView(this)
         animationView?.bindView(this)
     }
 }

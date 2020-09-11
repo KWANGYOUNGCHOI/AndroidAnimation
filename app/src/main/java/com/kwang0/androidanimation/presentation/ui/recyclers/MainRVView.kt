@@ -1,4 +1,4 @@
-package com.kwang0.androidanimation.presentation.ui.views
+package com.kwang0.androidanimation.presentation.ui.recyclers
 
 import android.app.Activity
 import android.content.Context
@@ -9,7 +9,6 @@ import com.kwang0.androidanimation.R
 import com.kwang0.androidanimation.data.models.Content
 import com.kwang0.androidanimation.presentation.presenters.MainContract
 import com.kwang0.androidanimation.presentation.presenters.impl.MainPresenterImpl
-import com.kwang0.androidanimation.presentation.ui.adapters.MainRVAdapter
 import java.util.ArrayList
 
 class MainRVView(private var mContext: Context): MainContract.View {
@@ -24,7 +23,11 @@ class MainRVView(private var mContext: Context): MainContract.View {
     init {
         mainPresenter = MainPresenterImpl(this)
 
-        animationAdapter = MainRVAdapter(mContext, animationList)
+        animationAdapter =
+            MainRVAdapter(
+                mContext,
+                animationList
+            )
     }
 
     fun bindView(a: Activity) {
