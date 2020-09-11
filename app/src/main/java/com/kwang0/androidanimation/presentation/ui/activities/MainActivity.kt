@@ -1,7 +1,7 @@
 package com.kwang0.androidanimation.presentation.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.kwang0.androidanimation.R
 import com.kwang0.androidanimation.presentation.ui.recyclers.main.MainRecycler
 
@@ -23,10 +23,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun mainViewSetUp() {
-        animationView =
-            MainRecycler(
-                this
-            )
+        animationView = MainRecycler(this)
         animationView?.bindView(this)
     }
 }
