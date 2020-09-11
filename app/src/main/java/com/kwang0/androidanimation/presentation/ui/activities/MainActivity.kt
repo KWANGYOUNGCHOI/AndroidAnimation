@@ -3,12 +3,12 @@ package com.kwang0.androidanimation.presentation.ui.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.kwang0.androidanimation.R
-import com.kwang0.androidanimation.presentation.ui.recyclers.MainRVView
+import com.kwang0.androidanimation.presentation.ui.recyclers.main.MainRecycler
 
 class MainActivity : AppCompatActivity() {
     val TAG = MainActivity::class.simpleName
 
-    private var animationView: MainRVView? = null
+    private var animationView: MainRecycler? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun mainViewSetUp() {
         animationView =
-            MainRVView(this)
+            MainRecycler(
+                this
+            )
         animationView?.bindView(this)
     }
 }

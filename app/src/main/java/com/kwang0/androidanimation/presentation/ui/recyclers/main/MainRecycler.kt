@@ -1,4 +1,4 @@
-package com.kwang0.androidanimation.presentation.ui.recyclers
+package com.kwang0.androidanimation.presentation.ui.recyclers.main
 
 import android.app.Activity
 import android.content.Context
@@ -11,20 +11,20 @@ import com.kwang0.androidanimation.presentation.presenters.MainContract
 import com.kwang0.androidanimation.presentation.presenters.impl.MainPresenterImpl
 import java.util.ArrayList
 
-class MainRVView(private var mContext: Context): MainContract.View {
-    var TAG = MainRVView::class.simpleName
+class MainRecycler(private var mContext: Context): MainContract.View {
+    var TAG = MainRecycler::class.simpleName
 
     private lateinit var animation_rv: RecyclerView
 
     var mainPresenter: MainContract.Presenter
     private var animationList: MutableList<Content> = ArrayList<Content>()
-    var animationAdapter: MainRVAdapter
+    var animationAdapter: MainRecyclerAdapter
 
     init {
         mainPresenter = MainPresenterImpl(this)
 
         animationAdapter =
-            MainRVAdapter(
+            MainRecyclerAdapter(
                 mContext,
                 animationList
             )

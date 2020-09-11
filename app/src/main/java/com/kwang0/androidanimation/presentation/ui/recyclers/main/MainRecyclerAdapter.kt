@@ -1,4 +1,4 @@
-package com.kwang0.androidanimation.presentation.ui.recyclers
+package com.kwang0.androidanimation.presentation.ui.recyclers.main
 
 import android.app.Activity
 import android.content.Context
@@ -18,7 +18,7 @@ import com.kwang0.androidanimation.helper.IntentHelper
 import com.kwang0.androidanimation.presentation.ui.activities.HostsAnimActivity
 import com.kwang0.androidanimation.presentation.ui.activities.NeonButtonSwitchActivity
 
-class MainRVAdapter(val mContext: Context, var mData: List<Content>) : RecyclerView.Adapter<MainRVAdapter.ViewHolder>() {
+class MainRecyclerAdapter(val mContext: Context, var mData: List<Content>) : RecyclerView.Adapter<MainRecyclerAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val rootView: View = LayoutInflater.from(mContext).inflate(R.layout.activity_main_rv, parent, false)
         return ViewHolder(
