@@ -61,6 +61,7 @@ class MainRecyclerAdapter(val mContext: Context, var mData: List<Content>) : Rec
     private fun setContentText(holder: MainRecyclerHolder, text: String) {
         holder.tv.text = text
     }
+
     private fun setClickListener(holder: MainRecyclerHolder, id: String) {
         when(id) {
             "anim-01" -> holder.layout.setOnClickListener{
