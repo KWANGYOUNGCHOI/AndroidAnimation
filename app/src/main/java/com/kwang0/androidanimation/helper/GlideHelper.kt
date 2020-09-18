@@ -8,10 +8,10 @@ import com.kwang0.androidanimation.R
 import java.io.File
 
 object GlideHelper {
-    fun loadImg(context: Context, path: String?, target: ImageView) {
+    fun loadImg(context: Context, url: String?, target: ImageView) {
         Glide.with(context)
             .asBitmap()
-            .load(path)
+            .load(url)
             .placeholder(R.drawable.ic_place_holder)
             .circleCrop()
             .into(target)
